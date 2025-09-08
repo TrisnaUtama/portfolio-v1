@@ -19,7 +19,7 @@ export default function Experiences() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100 },
+      transition: { type: "spring" as const, stiffness: 100 },
     },
   };
 
@@ -28,7 +28,7 @@ export default function Experiences() {
       id="experiences"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }} 
+      viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
     >
       <motion.h2
