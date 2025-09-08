@@ -8,7 +8,13 @@ import {
   faDownload,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  AnimatePresence,
+  easeIn,
+  easeOut,
+  motion,
+  Variants,
+} from "framer-motion";
 
 export const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,12 +37,12 @@ export const About = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100 },
+      transition: { type: "spring", stiffness: 100 } as any,
     },
   };
 
@@ -46,17 +52,17 @@ export const About = () => {
     exit: { opacity: 0 },
   };
 
-  const modalPanelVariants = {
+  const modalPanelVariants: Variants = {
     hidden: { scale: 0.95, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: easeOut },
     },
     exit: {
       scale: 0.95,
       opacity: 0,
-      transition: { duration: 0.2, ease: "easeIn" },
+      transition: { duration: 0.2, ease: easeIn },
     },
   };
 
