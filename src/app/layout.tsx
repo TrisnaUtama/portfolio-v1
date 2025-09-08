@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/global.css";
+import ResponsiveLayout from "@/components/ConditionalSidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -8,12 +9,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className="antialiased bg-background">
+        <ResponsiveLayout>{children}</ResponsiveLayout>
+      </body>
     </html>
   );
 }
